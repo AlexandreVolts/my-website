@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import { NavLink } from "./NavLink";
 
 export function Header()
@@ -6,7 +6,7 @@ export function Header()
   const { t } = useTranslation();
 
   return (
-    <header className="flex items-center justify-between mx-10 border-b-2 border-gray-400 max-lg:flex-col">
+    <header className="fixed flex items-center justify-between w-11/12 -translate-x-1/2 border-b-2 border-gray-400 left-1/2 max-lg:flex-col">
       <h1 className="py-4 text-4xl font-bold">{t("name")}</h1>
       <nav className="lg:place-self-end">
         <ul className="flex md:space-x-5 max-md:flex-col">
