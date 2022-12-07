@@ -1,8 +1,13 @@
+import { ReactNode, Ref } from "react";
 import Head from "next/head";
-import { ReactNode } from "react";
 import { Header } from "./Header";
 
-export function Layout(props: { children: ReactNode }) {
+interface LayoutProps
+{
+  children: ReactNode;
+  ref?: Ref<HTMLDivElement>;
+}
+export const Layout = (props: LayoutProps) => {
   return (
     <div className="flex flex-col h-screen text-white bg-indigo-900">
       <Head>
@@ -15,4 +20,4 @@ export function Layout(props: { children: ReactNode }) {
       </main>
     </div>
   );
-}
+};

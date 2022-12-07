@@ -1,9 +1,11 @@
+import { useRef } from "react";
 import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Layout } from "../components/Layout";
 import { useTranslation } from "react-i18next";
 import { Section } from "../components/Section";
+import { useScrollState } from "../hooks/useScrollState";
 
 export async function getStaticProps({ locale }: GetServerSidePropsContext) {
   return ({
@@ -13,6 +15,7 @@ export async function getStaticProps({ locale }: GetServerSidePropsContext) {
   });
 }
 export default function Home() {
+  const { scroll, change } = useScrollState(4);
   const { t } = useTranslation();
 
   return (
@@ -21,17 +24,17 @@ export default function Home() {
         <title>Alexandre Cochet | Accueil</title>
       </Head>
       <Section>
-        <h1 className="font-bold text-8xl animate-appear">{t("name")}</h1>
-        <h3 className="text-2xl font-bold">{t("tagline")}</h3>
+        <h1 className="mt-32 font-bold text-center text-8xl animate-appear">{t("name")}</h1>
+        <h3 className="text-2xl font-bold text-center animate-appear-250">{t("tagline")}</h3>
       </Section>
       <Section color="secondary">
-        <h1>{t("websites")}</h1>
+        <h3 className="text-2xl font-bold animate-appear-250">{t("websites")}</h3>
       </Section>
       <Section color="tertiary">
-        <h1>{t("games")}</h1>
+        <h3 className="text-2xl font-bold animate-appear-250">{t("games")}</h3>
       </Section>
       <Section>
-        <h1>{t("experiments")}</h1>
+        <h3 className="text-2xl font-bold animate-appear-250">{t("experiments")}</h3>
       </Section>
     </Layout>
   )

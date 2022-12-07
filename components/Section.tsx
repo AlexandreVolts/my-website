@@ -9,12 +9,12 @@ export function Section(props: SectionProps)
 {
   const theme = {
     primary: "bg-indigo-900",
-    secondary: "bg-white text-black",
+    secondary: "bg-gray-800",
     tertiary: "bg-rose-900",
   }
 
   return (
-    <section className={`p-48 h-screen ${theme[props.color || 'primary']}`}>
+    <section className={`p-32 h-screen ${theme[props.color || 'primary']}`}>
       {props.children}
     </section>
   );
