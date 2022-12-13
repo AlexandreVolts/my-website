@@ -30,7 +30,7 @@ export function useScrollState(segments: number) {
     setTimer(setTimeout(() => {
       setIsAutoScroll(true);
       window.scrollTo({ top: (height / segments) * (s + (isSmallScroll ? delta : 0)) });
-      setTimeout(() => { setIsAutoScroll(false); setIsSmallScroll(true); }, 500);
+      setTimeout(() => { setIsAutoScroll(false); setIsSmallScroll(true); }, 300);
     }, 500));
   };
 

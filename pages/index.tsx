@@ -22,18 +22,18 @@ export default function Home() {
     <Layout>
       <Head>
         <title>Alexandre Cochet | Accueil</title>
-      </Head>
-      <Section>
+      </Head> 
+      <Section display={scroll === 0}>
         <h1 className="mt-32 font-bold text-center text-8xl animate-appear">{t("name")}</h1>
         <h3 className="text-2xl font-bold text-center animate-appear-250">{t("tagline")}</h3>
       </Section>
-      <Section color="secondary">
+      <Section display={scroll === 1} color="secondary">
         <h3 className="text-2xl font-bold animate-appear-250">{t("websites")}</h3>
       </Section>
-      <Section color="tertiary">
+      <Section display={scroll === 2} color="tertiary">
         <h3 className="text-2xl font-bold animate-appear-250">{t("games")}</h3>
       </Section>
-      <Section>
+      <Section display={scroll === 3}>
         <h3 className="text-2xl font-bold animate-appear-250">{t("experiments")}</h3>
       </Section>
     </Layout>
